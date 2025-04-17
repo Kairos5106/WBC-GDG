@@ -11,7 +11,7 @@ import { Section, Container } from "@/components/ds";
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="bg-neutral-300">
       <Section>
         <Container className="grid gap-12 md:grid-cols-[1.5fr_0.5fr_0.5fr]">
           <div className="grid gap-6">
