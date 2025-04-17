@@ -1,5 +1,8 @@
-import React from "react";
+"use client"
+
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,14 +14,37 @@ import {
 } from "@/components/ui/navigation-menu";
 
 function NavBar() {
+  const [isAtTop, setIsAtTop] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsAtTop(window.scrollY === 0);
+      console.log(window.scrollY === 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Check position on initial load
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="bg-black">
+    <nav className={`${isAtTop ? "bg-black" : "bg-transparent"} sticky top-0 transition-colors duration-250 ease-in-out`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <Link href="/" className="text-white">
-                Logo
+                <Image 
+                  src="/vercel.svg"
+                  width={50}
+                  height={50}
+                  alt="Company logo"
+                />
               </Link>
             </div>
           </div>
@@ -29,7 +55,7 @@ function NavBar() {
 
                   <NavigationMenuItem>
                     <NavigationMenuTrigger>
-                      Item One
+                      Products
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <NavigationMenuLink>
@@ -40,11 +66,14 @@ function NavBar() {
 
                   <NavigationMenuItem>
                     <NavigationMenuTrigger>
-                      Item Two
+                      About Us
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <NavigationMenuLink>
-                        Link
+                        Sample link
+                      </NavigationMenuLink>
+                      <NavigationMenuLink>
+                        Sample page
                       </NavigationMenuLink>
                     </NavigationMenuContent>
                   </NavigationMenuItem>

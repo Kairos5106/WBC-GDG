@@ -10,7 +10,7 @@ import NavBar from "@/components/NavBar";
 
 export default function Home() {
   return (
-    <>
+    <div>
       <NavBar />
       <Main>
         <Section>
@@ -21,6 +21,6 @@ export default function Home() {
         </Section>
         <Footer />
       </Main>
-    </>
+    </div>
   );
 }

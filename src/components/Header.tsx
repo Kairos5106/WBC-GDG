@@ -4,7 +4,7 @@ import Button from "./Button";
 
 const Header = () => {
   return (
-    <Section>
+    <Section className="bg-white">
       <Container className="flex flex-col">
         <h1 className="!mb-0">Lorem ipsum dolor sit amet consectetur</h1>
         <h3 className="text-muted-foreground">
