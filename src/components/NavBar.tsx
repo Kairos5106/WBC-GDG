@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
@@ -10,7 +10,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import HamburgerIcon from "./icons/HamburgerIcon";
 import CloseIcon from "./icons/CloseIcon";
@@ -24,13 +24,13 @@ function NavBar() {
       setIsAtTop(window.scrollY === 0);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     // Check position on initial load
     handleScroll();
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -44,23 +44,26 @@ function NavBar() {
         isAtTop ? "bg-black" : "bg-transparent"
       } fixed w-full top-0 left-0 z-50 transition-colors duration-250 ease-in-out`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl m-0 px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div className="flex-shrink-0">
-              {isAtTop === true && (
-                <Link 
-                  href="/" 
-                  className={`${isAtTop === true ? "text-white" : "text-black"}`}
-                >
-                  <Image
-                    src="/vercel.svg"
-                    width={50}
-                    height={50}
-                    alt="Company logo"
-                  />
-                </Link>
-              )}
+            <div className="flex items-center space-x-3">
+              <Link
+                href="/"
+                className={`flex items-center space-x-3 ${
+                  isAtTop ? "text-white" : "hidden"
+                }`}
+              >
+                <Image
+                  src="/vercel.svg"
+                  width={50}
+                  height={50}
+                  alt="Company logo"
+                />
+                <span className="text-md">
+                  Empowering Digital Futures
+                </span>
+              </Link>
             </div>
           </div>
           <div className="hidden md:block">
@@ -87,7 +90,7 @@ function NavBar() {
                       <NavigationMenuLink
                         className={navigationMenuTriggerStyle()}
                       >
-                        Docs
+                        Contact Us
                       </NavigationMenuLink>
                     </Link>
                   </NavigationMenuItem>
@@ -127,7 +130,7 @@ function NavBar() {
               <NavigationMenuItem>
                 <Link href={"/contact-us"} legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Docs
+                    Contact Us
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>

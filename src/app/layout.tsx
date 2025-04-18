@@ -1,5 +1,6 @@
 import { Main } from "@/components/ds";
 import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -29,10 +30,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-      <NavBar />
-      <Main className="bg-stone-50 pt-16">
-        {children}
-      </Main>
+      <div className="z-50">
+        <NavBar />
+        <Main className="bg-stone-50">
+          {children}
+        </Main>
+      </div>
+      <Footer />
       </body>
     </html>
   );

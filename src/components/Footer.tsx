@@ -11,14 +11,14 @@ import { Section, Container } from "@/components/ds";
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-300">
+    <footer className="bg-neutral-300 z-0">
       <Section>
         <Container className="grid gap-12 md:grid-cols-[1.5fr_0.5fr_0.5fr]">
           <div className="grid gap-6">
             <Link href="/">
               <h3 className="sr-only">brijr/components</h3>
               <Image
-                src={"/globe.svg"}
+                src={"/vercel.svg"}
                 alt="Logo"
                 width={120}
                 height={27.27}
