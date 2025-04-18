@@ -28,10 +28,10 @@ const Header = () => {
         </div>
 
         <div className="flex items-center justify-center gap-16 pt-16 z-15">
-          <Button variant="ghost" className="text-white text-2xl font-light p-10">
+          <Button variant="ghost" className="text-white text-2xl font-light p-10 cursor-pointer">
             Get a booking
           </Button>
-          <Button variant="ghost" className="text-white text-2xl font-light p-10">
+          <Button variant="ghost" className="text-white text-2xl font-light p-10 cursor-pointer">
             Learn more <ChevronRightIcon className="w-8"/>
           </Button>
         </div>

@@ -9,12 +9,14 @@ import Balancer from "react-wrap-balancer";
 // Local component imports
 import { Section, Container } from "@/components/ds";
 
+import CTA from "./CallToAction";
+
 export default function Footer() {
   return (
     <footer className="bg-neutral-300 z-0">
       <Section>
-        <Container className="grid gap-12 md:grid-cols-[1.5fr_0.5fr_0.5fr]">
-          <div className="grid gap-6">
+        <Container className="grid gap-2 md:grid-cols-[1.0fr_0.5fr_0.5fr_0.5fr]">
+          <div className="grid gap-0 p-4">
             <Link href="/">
               <h3 className="sr-only">brijr/components</h3>
               <Image
@@ -37,13 +39,14 @@ export default function Footer() {
               . All rights reserved. 2024-present.
             </p>
           </div>
-          <div className="flex flex-col gap-2">
+          <CTA />
+          <div className="flex flex-col gap-4 p-4">
             <h5>Website</h5>
             <Link href="/">Blog</Link>
             <Link href="/">Authors</Link>
             <Link href="/">Categories</Link>
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-4 p-4">
             <h5>Legal</h5>
             <Link href="/privacy-policy">Privacy Policy</Link>
             <Link href="/terms-of-service">Terms of Service</Link>
