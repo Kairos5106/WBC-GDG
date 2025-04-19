@@ -1,5 +1,5 @@
 // React and Next.js
-import React from "react";
+import React, { ReactElement } from "react";
 
 // Layout Components
 import { Section, Container } from "@/components/ds";
@@ -9,7 +9,7 @@ import Balancer from "react-wrap-balancer";
 import { Coins } from "lucide-react";
 
 type FeatureText = {
-  icon: JSX.Element;
+  icon: ReactElement;
   title: string;
   description: string;
 };
