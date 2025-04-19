@@ -7,7 +7,7 @@ import Balancer from "react-wrap-balancer";
 
 // Local component imports
 import { Section, Container } from "@/components/ds";
-import CTA from "./CallToAction";
+import { CallToAction } from "./CallToAction";
 import ComesInGoesOutUnderline from "@/fancy/components/text/underline-comes-in-goes-out";
 
 export default function Footer() {
@@ -38,13 +38,13 @@ export default function Footer() {
               . All rights reserved. 2024-present.
             </p>
           </div>
-          <CTA />
+          <CallToAction />
           <div className="flex flex-col gap-4 p-4">
-            <h5 className="font-extrabold">Website</h5>
+            <h5 className="font-extrabold font-stretch-expanded">Website</h5>
             <Link href="/contact-us"><ComesInGoesOutUnderline label="Products"/></Link>
             <Link href="/"><ComesInGoesOutUnderline label="Authors"/></Link>
             <Link href="/"><ComesInGoesOutUnderline label="Categories"/></Link>
-            <h5 className="font-extrabold">Legal</h5>
+            <h5 className="font-extrabold font-stretch-expanded">Legal</h5>
             <Link href="/privacy-policy"><ComesInGoesOutUnderline label="Privacy Policy"/></Link>
             <Link href="/terms-of-service"><ComesInGoesOutUnderline label="Terms of Conditions"/></Link>
             <Link href="/cookie-policy"><ComesInGoesOutUnderline label="Cookie Policy"/></Link>

@@ -60,7 +60,7 @@ function NavBar() {
                   height={50}
                   alt="Company logo"
                 />
-                <span className="text-md hidden sm:max-xl:block">
+                <span className="text-md hidden sm:max-2xl:block">
                   Empowering Digital Futures
                 </span>
               </Link>

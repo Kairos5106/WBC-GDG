@@ -17,35 +17,35 @@ type FeatureText = {
 const featureText: FeatureText[] = [
   {
     icon: <Coins className="h-6 w-6" />,
-    title: "Lorem Ipsum",
+    title: "Free Money",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     icon: <Coins className="h-6 w-6" />,
-    title: "Lorem Ipsum",
+    title: "Steroids",
     description:
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
     icon: <Coins className="h-6 w-6" />,
-    title: "Lorem Ipsum",
+    title: "12 hour of sleep",
     description:
       "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
   },
 ];
 
-const FeatureCards = () => {
+const Features = () => {
   return (
     <Section className="border-b">
       <Container className="not-prose">
         <div className="flex flex-col gap-6">
-          <h3 className="text-4xl">
+          <h3 className="text-4xl text-center sm:text-left">
             <Balancer>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              This website has the answers to all of life&apos;s problems
             </Balancer>
           </h3>
-          <h4 className="text-2xl font-light opacity-70">
+          <h4 className="text-2xl text-center sm:text-left font-light opacity-70">
             <Balancer>
               Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
             </Balancer>
@@ -66,4 +66,4 @@ const FeatureCards = () => {
   );
 };
 
-export default FeatureCards;
+export default Features;

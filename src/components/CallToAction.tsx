@@ -24,7 +24,7 @@ const formSchema = z.object({
   }),
 });
 
-export function CTA() {
+export function CallToAction() {
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -43,11 +43,10 @@ export function CTA() {
   return (
     <Section>
       <Container className="space-y-8">
-        <h2 className="!my-0">Lorem ipsum dolor sit amet!</h2>
-        <p className="text-sm opacity-70 md:text-xl">
+        <h2 className="!my-0">Want to talk to us?</h2>
+        <p className="text-sm opacity-70 pt-4 md:text-xl">
           <Balancer>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Send us your email and we&apos;ll get back to you!
           </Balancer>
         </p>
         <Form {...form}>
@@ -78,4 +77,4 @@ export function CTA() {
   );
 }
 
-export default CTA;
+export default CallToAction;

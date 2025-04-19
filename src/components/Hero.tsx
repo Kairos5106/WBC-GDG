@@ -1,6 +1,5 @@
 // React and Next.js imports
 import Link from "next/link";
-import Image from "next/image";
 
 // Third-party library imports
 import Balancer from "react-wrap-balancer";
@@ -13,42 +12,37 @@ import { PictureCarousel } from "./Carousel";
 
 const Hero = () => {
   return (
-    <Section>
-      <Container className="grid gap-2 md:grid-cols-[0.5fr_0.5fr]">
-        <Container className="flex flex-col items-center text-center">
-          <Image
-            src={"/vercel.svg"}
-            width={172}
-            height={72}
-            alt="Company Logo"
-            className="not-prose mb-6 dark:invert md:mb-8"
-          />
-          <h1 className="!mb-0">
+    <Section className="w-full h-screen">
+      <Container className="grid gap-2 grid-cols-1 lg:grid-cols-[0.6fr_0.4fr]">
+
+        <Container className="min-h-0 w-full h-full">
+          <PictureCarousel />
+        </Container>
+
+        <Container className="flex flex-col justify-center text-center lg:text-left lg:m-0">
+          <h1 className="text-3xl pb-4">
             <Balancer>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Focus on the things that actually matter. Save your time
             </Balancer>
           </h1>
           <h3 className="text-muted-foreground">
             <Balancer>
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              Never have to worry about unimportant things again
             </Balancer>
           </h3>
-          <div className="not-prose mt-6 flex gap-2 md:mt-12">
+          <div className="not-prose mt-4 flex justify-center lg:justify-normal gap-2">
             <Button asChild>
               <Link href="/">
                 <Camera className="mr-2" />
-                Lorem Ipsum
+                Send nudes
               </Link>
             </Button>
             <Button variant={"ghost"} asChild>
-              <Link href="/posts">Dolor Sit Amet -{">"}</Link>
+              <Link href="/posts">Or dont idc lmao -{">"}</Link>
             </Button>
           </div>
         </Container>
-        <Container>
-          <PictureCarousel />
-        </Container>
+
       </Container>
     </Section>
   );
