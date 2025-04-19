@@ -1,4 +1,3 @@
-
 // React and Next.js imports
 import Image from "next/image";
 import Link from "next/link";
@@ -8,14 +7,14 @@ import Balancer from "react-wrap-balancer";
 
 // Local component imports
 import { Section, Container } from "@/components/ds";
-
 import CTA from "./CallToAction";
+import ComesInGoesOutUnderline from "@/fancy/components/text/underline-comes-in-goes-out";
 
 export default function Footer() {
   return (
     <footer className="bg-neutral-300 z-0">
       <Section>
-        <Container className="grid gap-2 md:grid-cols-[1.0fr_0.5fr_0.5fr_0.5fr]">
+        <Container className="grid gap-2 md:grid-cols-[1.5fr_0.5fr_0.5fr]">
           <div className="grid gap-0 p-4">
             <Link href="/">
               <h3 className="sr-only">brijr/components</h3>
@@ -41,16 +40,14 @@ export default function Footer() {
           </div>
           <CTA />
           <div className="flex flex-col gap-4 p-4">
-            <h5>Website</h5>
-            <Link href="/">Blog</Link>
-            <Link href="/">Authors</Link>
-            <Link href="/">Categories</Link>
-          </div>
-          <div className="flex flex-col gap-4 p-4">
-            <h5>Legal</h5>
-            <Link href="/privacy-policy">Privacy Policy</Link>
-            <Link href="/terms-of-service">Terms of Service</Link>
-            <Link href="/cookie-policy">Cookie Policy</Link>
+            <h5 className="font-extrabold">Website</h5>
+            <Link href="/contact-us"><ComesInGoesOutUnderline label="Products"/></Link>
+            <Link href="/"><ComesInGoesOutUnderline label="Authors"/></Link>
+            <Link href="/"><ComesInGoesOutUnderline label="Categories"/></Link>
+            <h5 className="font-extrabold">Legal</h5>
+            <Link href="/privacy-policy"><ComesInGoesOutUnderline label="Privacy Policy"/></Link>
+            <Link href="/terms-of-service"><ComesInGoesOutUnderline label="Terms of Conditions"/></Link>
+            <Link href="/cookie-policy"><ComesInGoesOutUnderline label="Cookie Policy"/></Link>
           </div>
         </Container>
       </Section>

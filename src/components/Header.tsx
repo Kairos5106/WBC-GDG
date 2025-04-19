@@ -1,6 +1,6 @@
 import { Container, Section } from "@/components/ds";
 import { Button } from "@/components/ui/button"
-import { ChevronRightIcon } from '@heroicons/react/24/solid';
+import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
 
 const Header = () => {
   return (
@@ -27,12 +27,12 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-center gap-16 pt-16 z-15">
+        <div className="grid sm:grid-cols-2 sm:gap-4 items-center justify-center pt-3 sm:pt-16 z-15 shrink">
           <Button variant="ghost" className="text-white text-2xl font-light p-10 cursor-pointer">
             Get a booking
           </Button>
           <Button variant="ghost" className="text-white text-2xl font-light p-10 cursor-pointer">
-            Learn more <ChevronRightIcon className="w-8"/>
+            Learn more <ArrowUpRightIcon className="w-8 hidden sm:block"/>
           </Button>
         </div>
       </Container>
@@ -41,3 +41,4 @@ const Header = () => {
 };
 
 export default Header;
+

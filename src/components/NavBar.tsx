@@ -41,8 +41,8 @@ function NavBar() {
   return (
     <nav
       className={`${
-        isAtTop ? "bg-black" : "bg-transparent"
-      } fixed w-full top-0 left-0 z-50 transition-colors duration-250 ease-in-out`}
+        ( isAtTop || isClicked ) ? "bg-black" : "bg-transparent"
+      } fixed w-screen top-0 left-0 z-50 transition-colors duration-250 ease-in-out`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -51,7 +51,7 @@ function NavBar() {
               <Link
                 href="/"
                 className={`flex items-center space-x-3 ${
-                  isAtTop ? "text-white" : "hidden"
+                  ( isAtTop || isClicked ) ? "text-white" : "hidden"
                 }`}
               >
                 <Image
@@ -60,7 +60,7 @@ function NavBar() {
                   height={50}
                   alt="Company logo"
                 />
-                <span className="text-md">
+                <span className="text-md hidden sm:max-xl:block">
                   Empowering Digital Futures
                 </span>
               </Link>
