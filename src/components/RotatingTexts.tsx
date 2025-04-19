@@ -1,14 +1,22 @@
 "use client"
 
-import { LayoutGroup, motion } from "motion/react"
+import { FC } from "react";
 
-import TextRotate from "@/fancy/components/text/text-rotate"
+import { LayoutGroup, motion } from "motion/react";
 
-export default function RotatingTexts({
+import TextRotate from "@/fancy/components/text/text-rotate";
+
+interface RotatingTextsProps {
+  textBefore: string,
+  rotatingTextsArr: string[],
+  className?: string
+};
+
+const RotatingTexts: FC<RotatingTextsProps> = ({
   textBefore,
   rotatingTextsArr,
   className
-}) {
+}) => {
   return (
     <div className={className}>
       <LayoutGroup>
@@ -37,3 +45,5 @@ export default function RotatingTexts({
     </div>
   )
 }
+
+export default RotatingTexts;
