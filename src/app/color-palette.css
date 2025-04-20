@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-brand-primary: #515B3A;
+  --color-brand-primary-50: #f5fff5;
+  --color-brand-primary-100: #ebfeea;
+  --color-brand-primary-200: #d7fed5;
+  --color-brand-primary-300: #c4fdc1;
+  --color-brand-primary-400: #b0fdac;
+  --color-brand-primary-500: #9cfc97;
+  --color-brand-primary-600: #7dca79;
+  --color-brand-primary-700: #5e975b;
+  --color-brand-primary-800: #3e653c;
+  --color-brand-primary-900: #1f321e;
+  
+  --color-brand-secondary: #6BA368;
+  --color-brand-secondary-50: #f0f6f0;
+  --color-brand-secondary-100: #e1ede1;
+  --color-brand-secondary-200: #c4dac3;
+  --color-brand-secondary-300: #a6c8a4;
+  --color-brand-secondary-400: #89b586;
+  --color-brand-secondary-500: #6ba368;
+  --color-brand-secondary-600: #568253;
+  --color-brand-secondary-700: #40623e;
+  --color-brand-secondary-800: #2b412a;
+  --color-brand-secondary-900: #152115;
+
+  /* Functional Colors */
+  --color-success: #22c55e; /* Green */
+  --color-error: #ef4444;   /* Red */
+  --color-warning: #facc15; /* Yellow */
+  --color-info: #3b82f6;    /* Light Blue */
+
+  /* Neutral Colors */
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  --color-rich-black: #02040F;
+}
