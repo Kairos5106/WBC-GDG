@@ -38,7 +38,7 @@ function NavBar() {
       <div className="mx-4 lg:mx-24 border-b-2 border-white "> {/* Line under navbar */}
         <div className={`
         ${( isAtTop || isClicked ) ? "bg-brand-primary" : "bg-transparent"
-        } mx-auto px-4 sm:px-6 lg:px-8`}
+        } mx-auto px-4 sm:px-6 lg:px-16`}
         >
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
@@ -62,7 +62,7 @@ function NavBar() {
             </div>
             <div className="hidden md:block">
               <div className="ml-4 flex items-center space-x-4">
-                <NavBarContents />
+                <NavBarContents className="flex justify-center items-center gap-2" />
               </div>
             </div>
             <div className="md:hidden flex items-center">
@@ -85,7 +85,9 @@ function NavBar() {
       {/* Where the navbar is rendered in mobile view */}
       {isClicked && (
         <div className="md:hidden mx-4 pt-2 pb-3 space-y-1 sm:px-3">
-          <NavBarContents />
+          <NavBarContents 
+            className="grid grid-cols-[1.0fr_1.0fr] gap-4 w-full p-2" 
+          />
         </div>
       )}
     </nav>
