@@ -9,7 +9,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
-import CompanyLogo from "./icons/CompanyLogo";
+// import CompanyLogo from "./icons/CompanyLogo";
 import { cn } from "@/lib/utils";
 
 const components: { title: string; href: string; description: string }[] = [
@@ -52,18 +52,16 @@ const components: { title: string; href: string; description: string }[] = [
 
 interface NavBarContentsProps {
   className?: string
-  buttonClassName?: string
 }
 
 const NavBarContents: FC<NavBarContentsProps> = ({
   className,
-  buttonClassName
 }) => {
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <div className={className}>
-          {/* <NavigationMenuItem className={buttonClassName}>
+          {/* <NavigationMenuItem className="">
             <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
