@@ -99,7 +99,13 @@ const NavBarContents: FC<NavBarContentsProps> = ({
           <NavigationMenuItem>
             <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid gap-3 max-w-7xl mx-4 p-4 h-96 w-72 sm:h-64 md:w-[500px] md:grid-cols-1 lg:w-[600px] overflow-scroll">
+              <ul className={`
+                grid grid-cols-1 gap-3 max-w-7xl mx-4 p-4 overflow-scroll
+                h-96 w-59
+                mobile-md:h-150 mobile-md:w-72
+                mobile-lg:w-84
+                md:w-50
+              `}>
                 {components.map((component) => (
                   <ListItem
                     key={component.title}
