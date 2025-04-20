@@ -13,9 +13,9 @@ export default function Home() {
     <>
       <Section>
         <Header />
-        <Section className="w-full py-8">
+        {/* <Section className="w-full py-8">
           <Hero />
-        </Section>
+        </Section> */}
         <Section className="w-full bg-black/5 py-32">
           <Features />
         </Section>
