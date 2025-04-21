@@ -97,7 +97,7 @@ const NavBarContents: FC<NavBarContentsProps> = ({
               <NavigationMenuLink 
                 className={
                   navigationMenuTriggerStyle() + `
-                  tablet:text-lg font-normal
+                  tablet:text-lg 
               `}>
                 Contact Us
               </NavigationMenuLink>

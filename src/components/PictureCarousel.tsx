@@ -8,6 +8,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 interface CarouselProps {
   className?: string
@@ -38,10 +39,13 @@ export function PictureCarousel({
           <CarouselItem key={index}>
             <div
               className={`'
-              p-1
-            `}
+                p-1
+                laptop:min-w-[700px]
+              `}
             >
-              <Card className="border-0">
+              <Card className={cn(
+                "border-0"
+              )}>
                 <CardContent className="relative aspect-square p-6 overflow-hidden">
                   <Image
                     src={imageSrc[index]}

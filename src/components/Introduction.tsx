@@ -1,6 +1,8 @@
 import React from "react";
 import ClickableCard from "./ClickableCard";
 import { BookOpenIcon } from "@heroicons/react/24/solid";
+import RotatingTexts from "./RotatingTexts";
+import { cn } from "@/lib/utils";
 
 export default function Introduction() {
   return (
@@ -9,11 +11,32 @@ export default function Introduction() {
         block pt-16
       `}
     >
-      <h1 className={`
-        font-bold text-3xl/8 pb-3
-        tablet:text-4xl/8 
-      `}>Resources for the underserved.</h1>
-
+      <div
+        className={cn(
+          "flex flex-col pb-4 gap-4 items-start",
+          "tablet:flex-row tablet:gap-2",
+          "laptop:flex-col laptop:gap-4",
+          "laptop-lg:flex-row laptop-lg:gap-2",
+        )}
+      >
+        <h1 className="font-bold text-3xl/8 tablet:text-4xl/8 ">Resources for</h1>
+        <RotatingTexts 
+          className={`
+            font-bold text-3xl/8 -m-2
+            tablet:text-4xl/8 
+          `}
+          textBefore=""
+          rotatingTextsArr={[
+            "seniors & elders.",
+            "those in need.",
+            "the underserved.",
+            "the community.",
+            "those left behind.",
+            "new tech users.",
+          ]}
+          backgroundColor="brand-primary"
+        />
+      </div>
       <h2 className={`
         text-gray-500 text-md pb-3
         tablet:text-lg
@@ -35,6 +58,18 @@ export default function Introduction() {
         <ClickableCard 
           href="/"
           title="Cat 2"
+          description="Browse a collection of free resources"
+          icon={
+            <BookOpenIcon 
+              width={20}
+              className={`
+                tablet:w-[24px]
+              `}
+          />}
+        />
+        <ClickableCard 
+          href="/"
+          title="Cat 3"
           description="Browse a collection of free resources"
           icon={
             <BookOpenIcon 

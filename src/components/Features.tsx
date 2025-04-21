@@ -6,7 +6,7 @@ import { Section, Container } from "@/components/ds";
 import Balancer from "react-wrap-balancer";
 
 // Icons
-import { Coins } from "lucide-react";
+import { Globe, HeartHandshake, BookOpenCheck } from "lucide-react";
 
 type FeatureText = {
   icon: ReactElement;
@@ -16,22 +16,22 @@ type FeatureText = {
 
 const featureText: FeatureText[] = [
   {
-    icon: <Coins className="h-6 w-6" />,
-    title: "Free Money",
+    icon: <Globe className="h-6 w-6" />,
+    title: "Easy Access to Vital Services",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "HelpingHand connects you to essential services like healthcare, government aid, and public benefits — all in one easy-to-use place.",
   },
   {
-    icon: <Coins className="h-6 w-6" />,
-    title: "Steroids",
+    icon: <HeartHandshake className="h-6 w-6" />,
+    title: "Support for Seniors & Families",
     description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Our platform is designed with older adults and underserved families in mind, with clear language, large text, and helpful guidance at every step.",
   },
   {
-    icon: <Coins className="h-6 w-6" />,
-    title: "12 hour of sleep",
+    icon: <BookOpenCheck className="h-6 w-6" />,
+    title: "Build Confidence with Digital Skills",
     description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "From using email to recognizing online scams, our tutorials and tools help you grow your digital literacy in a safe, friendly environment.",
   },
 ];
 
@@ -42,12 +42,12 @@ const Features = () => {
         <div className="flex flex-col gap-6">
           <h3 className="text-4xl text-center sm:text-left">
             <Balancer>
-              This website has the answers to all of life&apos;s problems
+              Empowering communities through digital confidence and connection
             </Balancer>
           </h3>
           <h4 className="text-2xl text-center sm:text-left font-light opacity-70">
             <Balancer>
-              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+              HelpingHand makes it simple to find trusted information and build skills to thrive in a digital world.
             </Balancer>
           </h4>
 
