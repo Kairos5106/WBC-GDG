@@ -3,25 +3,26 @@
 import { Container, Section } from "@/components/ds";
 import Introduction from "./Introduction";
 import { PictureCarousel } from "./PictureCarousel";
-import { ButtonPrimary } from "./ButtonPrimary";
-
-// import { Button } from "@/components/ui/button"
-// import VariableFontHoverByLetter from "@/fancy/components/text/variable-font-hover-by-letter";
-// import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
-// import Link from "next/link";
-// import RotatingTexts from "@/components/RotatingTexts";
+import { Button } from "./ui/button";
+import { ArrowRightEndOnRectangleIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
 
 const Header = () => {
-  // const rotateTextsArr: string[] = [
-  //   "inspiration",
-  //   "innovation",
-  //   "impact"
-  // ];
+  const rotatingTextsArr = [
+    "seniors & elders.",
+    "those in need.",
+    "the underserved.",
+    "the community.",
+    "those left behind.",
+    "new tech users.",
+  ]
+
   const images = [
     "/home-page-header/header-1.jpg",
     "/home-page-header/header-2.jpg",
     "/home-page-header/header-3.jpg",
   ];
+
   return (
     <Section className="bg-brand-background">
       <Container 
@@ -44,12 +45,23 @@ const Header = () => {
               className={`
                 flex flex-col justify-between h-full
             `}>
-              <Introduction />
-              <ButtonPrimary 
-                text="Browse resources" 
-                className={`
-                  mt-3 mb-1
-              `}/>
+              <Introduction 
+                rotatingTextsArr={rotatingTextsArr}
+              />
+              <Button
+                variant="primary"
+                asChild
+              >
+                <Link href="/resources">
+                  Browse resources
+                  <ArrowRightEndOnRectangleIcon 
+                    className={`
+                      size-[20px]
+                      tablet:size-[24px] tablet:mt-0.5
+                    `}
+                  />
+                </Link>
+              </Button>
             </div>
             <PictureCarousel 
               className={`

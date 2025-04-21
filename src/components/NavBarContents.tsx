@@ -12,41 +12,32 @@ import Link from "next/link";
 // import CompanyLogo from "./icons/CompanyLogo";
 import { cn } from "@/lib/utils";
 
-const components: { title: string; href: string; description: string }[] = [
+const components: {
+  className?: string | undefined; title: string; href: string; description?: string 
+}[] = [
   {
-    title: "Alert Dialog",
+    title: "Category 1",
     href: "/docs/primitives/alert-dialog",
     description:
       "A modal dialog that interrupts the user with important content and expects a response.",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
+    title: "Category 2",
+    href: "/docs/primitives/alert-dialog",
     description:
-      "For sighted users to preview content available behind a link.",
+      "A modal dialog that interrupts the user with important content and expects a response.",
   },
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
+    title: "Category 3",
+    href: "/docs/primitives/alert-dialog",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "A modal dialog that interrupts the user with important content and expects a response.",
   },
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+    title: "All Resources",
+    href: "/resources",
+    className: "",
+    description: undefined
   },
 ];
 
@@ -70,13 +61,9 @@ const NavBarContents: FC<NavBarContentsProps> = ({
             `}>
               Resources
             </NavigationMenuTrigger>
-
             <NavigationMenuContent>
               <ul className={`
-                grid grid-cols-1 gap-3 max-w-7xl mx-4 p-4 overflow-scroll
-                h-96 w-59
-                mobile-md:h-150 mobile-md:w-73
-                mobile-lg:w-84
+                grid grid-cols-1 max-w-[80vw] max-h-[65vh] overflow-scroll p-2
                 md:w-50
               `}>
                 {components.map((component) => (
@@ -84,8 +71,11 @@ const NavBarContents: FC<NavBarContentsProps> = ({
                     key={component.title}
                     title={component.title}
                     href={component.href}
+                    className={component.className}
                   >
-                    {component.description}
+                    {component.description && (
+                      <p>{component.description}</p>
+                    )}
                   </ListItem>
                 ))}
               </ul>
@@ -127,8 +117,12 @@ const ListItem = React.forwardRef<
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <div className={cn(
+            "text-sm font-medium leading-none"
+          )}>{title}</div>
+          <p className={cn(
+            "line-clamp-2 text-sm leading-snug text-muted-foreground"
+          )}>
             {children}
           </p>
         </a>
