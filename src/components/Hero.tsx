@@ -16,7 +16,9 @@ const Hero = () => {
       <Container className="grid gap-2 grid-cols-1 lg:grid-cols-[0.6fr_0.4fr]">
 
         <Container className="min-h-0 w-full h-full">
-          <PictureCarousel />
+          <PictureCarousel 
+            imageSrc={[]}
+          />
         </Container>
 
         <Container className="flex flex-col justify-center text-center lg:text-left lg:m-0">

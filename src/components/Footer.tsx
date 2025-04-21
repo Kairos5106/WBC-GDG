@@ -19,16 +19,16 @@ export default function Footer() {
             <Link href="/">
               <h3 className="sr-only">brijr/components</h3>
               <Image
-                src={"/vercel.svg"}
+                src={"/logo-outline-black.png"}
                 alt="Logo"
                 width={120}
                 height={27.27}
-                className="transition-all hover:opacity-75 dark:invert"
+                className="transition-all hover:opacity-75 rotate-270"
               ></Image>
             </Link>
             <p>
               <Balancer>
-                brijr/components is a collection of Next.js, React, Typescript
+                <span className="font-bold">HelpingHand</span> is a collection of Next.js, React, Typescript
                 components for building landing pages and websites.
               </Balancer>
             </p>

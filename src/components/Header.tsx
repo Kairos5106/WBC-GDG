@@ -17,6 +17,11 @@ const Header = () => {
   //   "innovation",
   //   "impact"
   // ];
+  const images = [
+    "/home-page-header/header-1.jpg",
+    "/home-page-header/header-2.jpg",
+    "/home-page-header/header-3.jpg",
+  ];
   return (
     <Section className="bg-brand-background">
       <Container 
@@ -49,7 +54,9 @@ const Header = () => {
             <PictureCarousel 
               className={`
                 laptop:pt-9
-            `}/>
+              `}
+              imageSrc={images}
+            />
           </div>
         </div>
       </Container>

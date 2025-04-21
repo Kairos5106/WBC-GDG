@@ -7,18 +7,22 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import Image from "next/image";
 
 interface CarouselProps {
   className?: string
+  imageSrc: string[]
 }
 
 export function PictureCarousel({
-  className
+  className,
+  imageSrc = []
 }: CarouselProps) {
   const plugin = React.useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: true })
+    Autoplay({ delay: 2000, stopOnInteraction: true })
   );
 
+  console.log(imageSrc.length, imageSrc);
   return (
     <Carousel
       plugins={[plugin.current]}
@@ -30,15 +34,21 @@ export function PictureCarousel({
       onMouseLeave={plugin.current.reset}
     >
       <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
+        {imageSrc.map((_, index) => (
           <CarouselItem key={index}>
-            <div className={`'
+            <div
+              className={`'
               p-1
-              
-            `}>
+            `}
+            >
               <Card className="border-0">
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-4xl font-semibold">{index + 1}</span>
+                <CardContent className="relative aspect-square p-6 overflow-hidden">
+                  <Image
+                    src={imageSrc[index]}
+                    alt="Logo"
+                    fill
+                    className="object-cover transition-all"
+                  />
                 </CardContent>
               </Card>
             </div>

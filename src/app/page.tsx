@@ -12,15 +12,9 @@ export default function Home() {
     <>
       <Section>
         <Header />
-        <Section className="w-full bg-black/5 py-32">
-          <Features />
-        </Section>
-        <Section className="h-screen">
-          <AnimatedGradientComponent />
-        </Section>
-        <Section className="w-full py-8">
-          <FAQ />
-        </Section>
+        <Features />
+        <AnimatedGradientComponent />
+        <FAQ />
       </Section>
     </>
   );
