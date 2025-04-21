@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/carousel";
 
 interface CarouselProps {
-  className: string
+  className?: string
 }
 
 export function PictureCarousel({

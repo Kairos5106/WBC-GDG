@@ -3,7 +3,7 @@ import { ArrowRightEndOnRectangleIcon } from "@heroicons/react/24/solid";
 
 interface ButtonProps {
   text: string
-  className: string
+  className?: string
 }
 
 export function ButtonPrimary({
