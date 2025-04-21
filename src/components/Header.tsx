@@ -25,17 +25,31 @@ const Header = () => {
       `}>
         <div 
           className={`
-            h-full w-auto px-4 pb-8 bg-gray-100 shadow-md grid grid-cols-1 border-b-2 border-b-rich-black
+            px-4 pb-8 bg-gray-100 shadow-md grid grid-cols-1 border-b-2 border-b-rich-black
             mobile-lg:px-8 mobile-lg:pt-12
             tablet:-mx-2
+            laptop:mt-18 laptop:mx-4
         `}>
           <div 
             className={`
               grid grid-cols-1 gap-3
+              laptop:grid-cols-2 laptop:gap-6
           `}> 
-            <Introduction />
-            <ButtonPrimary text="Browse resources" />
-            <PictureCarousel />
+            <div
+              className={`
+                flex flex-col justify-between h-full
+            `}>
+              <Introduction />
+              <ButtonPrimary 
+                text="Browse resources" 
+                className={`
+                  mt-3 mb-1
+              `}/>
+            </div>
+            <PictureCarousel 
+              className={`
+                laptop:pt-9
+            `}/>
           </div>
         </div>
       </Container>

@@ -37,13 +37,14 @@ function NavBar() {
         className={`
           mx-4 border-b-2 border-white
           mobile-lg:mx-4
-          lg:mx-24
-        `}
-      >
+          laptop:mx-10 laptop:border-b-4
+      `}>
         <div className={`
         ${( isAtTop || isClicked ) ? "bg-brand-primary" : "bg-rich-black/50"
-        } mx-auto px-4 sm:px-6 lg:px-16`}
-        >
+        } mx-auto px-4 
+          sm:px-6 
+          laptop:px-16 laptop:py-4
+        `}>
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <div className="flex items-center space-x-3">

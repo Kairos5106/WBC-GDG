@@ -8,7 +8,13 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
-export function PictureCarousel() {
+interface CarouselProps {
+  className: string
+}
+
+export function PictureCarousel({
+  className
+}: CarouselProps) {
   const plugin = React.useRef(
     Autoplay({ delay: 5000, stopOnInteraction: true })
   );
@@ -16,14 +22,20 @@ export function PictureCarousel() {
   return (
     <Carousel
       plugins={[plugin.current]}
-      className="w-full max-w-7xl"
+      className={`${className} 
+        w-full max-w-7xl
+        laptop:max-h-full
+      `}
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
     >
       <CarouselContent>
         {Array.from({ length: 5 }).map((_, index) => (
           <CarouselItem key={index}>
-            <div className="p-1">
+            <div className={`'
+              p-1
+              
+            `}>
               <Card className="border-0">
                 <CardContent className="flex aspect-square items-center justify-center p-6">
                   <span className="text-4xl font-semibold">{index + 1}</span>

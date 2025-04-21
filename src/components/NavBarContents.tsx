@@ -65,7 +65,7 @@ const NavBarContents: FC<NavBarContentsProps> = ({
 
             <NavigationMenuTrigger 
               className={`
-                shadow-xl font-bold
+                shadow-xl
                 tablet:text-lg
             `}>
               Resources
@@ -75,7 +75,7 @@ const NavBarContents: FC<NavBarContentsProps> = ({
               <ul className={`
                 grid grid-cols-1 gap-3 max-w-7xl mx-4 p-4 overflow-scroll
                 h-96 w-59
-                mobile-md:h-150 mobile-md:w-72
+                mobile-md:h-150 mobile-md:w-73
                 mobile-lg:w-84
                 md:w-50
               `}>
@@ -97,7 +97,7 @@ const NavBarContents: FC<NavBarContentsProps> = ({
               <NavigationMenuLink 
                 className={
                   navigationMenuTriggerStyle() + `
-                  tablet:text-lg
+                  tablet:text-lg font-normal
               `}>
                 Contact Us
               </NavigationMenuLink>
