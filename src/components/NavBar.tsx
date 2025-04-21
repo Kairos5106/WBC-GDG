@@ -54,7 +54,9 @@ function NavBar() {
             </div>
             <div className="hidden md:block">
               <div className="ml-4 flex items-center space-x-4">
-                <NavBarContents className="flex justify-center items-center gap-2" />
+                <NavBarContents 
+                  className="flex justify-center items-center gap-2" 
+                />
               </div>
             </div>
             <div className="md:hidden flex items-center">

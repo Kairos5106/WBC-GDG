@@ -34,7 +34,7 @@ export default function Footer() {
               </Balancer>
             </p>
             <p className="text-muted-foreground">
-              © HelpingHand. All rights reserved. 2024-present.
+              © HelpingHand. All rights reserved. 2025-present.
             </p>
           </div>
 

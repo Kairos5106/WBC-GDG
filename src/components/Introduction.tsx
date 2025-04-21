@@ -4,7 +4,13 @@ import { BookOpenIcon } from "@heroicons/react/24/solid";
 import RotatingTexts from "./RotatingTexts";
 import { cn } from "@/lib/utils";
 
-export default function Introduction() {
+interface IntroProps {
+  rotatingTextsArr: string[]
+}
+
+export default function Introduction({
+  rotatingTextsArr
+}: IntroProps) {
   return (
     <div 
       className={`
@@ -26,14 +32,7 @@ export default function Introduction() {
             tablet:text-4xl/8 
           `}
           textBefore=""
-          rotatingTextsArr={[
-            "seniors & elders.",
-            "those in need.",
-            "the underserved.",
-            "the community.",
-            "those left behind.",
-            "new tech users.",
-          ]}
+          rotatingTextsArr={rotatingTextsArr}
           backgroundColor="brand-primary"
         />
       </div>
