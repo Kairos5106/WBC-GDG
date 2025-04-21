@@ -37,7 +37,7 @@ const featureText: FeatureText[] = [
 
 const Features = () => {
   return (
-    <Section className="border-b">
+    <Section className="border-b w-full bg-black/5 py-32">
       <Container className="not-prose">
         <div className="flex flex-col gap-6">
           <h3 className="text-4xl text-center sm:text-left">
