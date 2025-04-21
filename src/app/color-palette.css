@@ -33,6 +33,7 @@
   --color-info: #3b82f6;    /* Light Blue */
 
   /* Neutral Colors */
+  --color-brand-background: rgba(209, 213, 219, 0.3);
   --color-gray-100: #f3f4f6;
   --color-gray-200: #e5e7eb;
   --color-gray-300: #d1d5db;

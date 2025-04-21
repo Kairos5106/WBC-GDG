@@ -46,6 +46,11 @@ export const Section = ({ children, className, id, style }: DSProps) => (
   </section>
 );
 
+const containerStyles = `
+  p-4 
+  sm:p-6
+`;
+
 /**
  * Container component to wrap content within a centered div with padding.
  *
@@ -58,7 +63,7 @@ export const Section = ({ children, className, id, style }: DSProps) => (
  */
 export const Container = ({ children, className, id, style }: DSProps) => (
   <div
-    className={cn("max-w-5xl mx-auto p-4 sm:p-6", className)}
+    className={cn(containerStyles, className)}
     id={id}
     style={style}
   >

@@ -1,12 +1,10 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
-
+import NavBarContents from "./NavBarContents";
 import HamburgerIcon from "./icons/HamburgerIcon";
 import CloseIcon from "./icons/CloseIcon";
-import NavBarContents from "./NavBarContents";
+import NavBarLogo from "./NavBarLogo";
 
 function NavBar() {
   const [isAtTop, setIsAtTop] = useState(true);
@@ -35,29 +33,22 @@ function NavBar() {
     <nav
       className={`fixed w-screen top-0 left-0 z-50 transition-colors duration-250 ease-in-out`}
     >
-      <div className="mx-4 lg:mx-24 border-b-2 border-white "> {/* Line under navbar */}
+      <div 
+        className={`
+          mx-4 border-b-2 border-white
+          mobile-lg:mx-4
+          laptop:mx-10 laptop:border-b-4
+      `}>
         <div className={`
-        ${( isAtTop || isClicked ) ? "bg-brand-primary" : "bg-transparent"
-        } mx-auto px-4 sm:px-6 lg:px-16`}
-        >
+        ${( isAtTop || isClicked ) ? "bg-brand-primary" : "bg-rich-black/50"
+        } mx-auto px-4 
+          sm:px-6 
+          laptop:px-16 laptop:py-4
+        `}>
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <div className="flex items-center space-x-3">
-                <Link
-                  href="/"
-                  className="flex items-center space-x-3 pl-1.5"
-                >
-                  <Image
-                    src="/logo-outline-white.png"
-                    width={32}
-                    height={32}
-                    alt="Company logo"
-                    className="rotate-270"
-                  />
-                  <span className="text-lg sm:text-md text-white font-bold pl-2">
-                    HelpingHand
-                  </span>
-                </Link>
+                <NavBarLogo />
               </div>
             </div>
             <div className="hidden md:block">

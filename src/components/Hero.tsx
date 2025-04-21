@@ -8,7 +8,7 @@ import { Camera } from "lucide-react";
 // Local component imports
 import { Section, Container } from "@/components/ds";
 import { Button } from "@/components/ui/button";
-import { PictureCarousel } from "./Carousel";
+import { PictureCarousel } from "./PictureCarousel";
 
 const Hero = () => {
   return (
