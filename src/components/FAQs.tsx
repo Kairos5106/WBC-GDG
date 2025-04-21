@@ -23,25 +23,26 @@ type FAQItem = {
 
 const content: FAQItem[] = [
   {
-    question: "Lorem ipsum dolor sit amet?",
+    question: "What is HelpingHand and who is it for?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    link: "https://google.com",
+      "HelpingHand is a free website that helps seniors and low-income families easily access local services, important information, and digital learning tools.",
   },
   {
-    question: "Ut enim ad minim veniam?",
+    question: "I’m not good with technology. Can I still use this website?",
     answer:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Absolutely! HelpingHand was designed to be easy to use, even for those with little to no computer experience. Everything is written in plain language, with large buttons and clear instructions.",
   },
   {
-    question: "Duis aute irure dolor in reprehenderit?",
+    question: "How can I learn to use a smartphone or computer?",
     answer:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "We offer beginner-friendly guides on how to use smartphones, access the internet, and stay safe online.",
+    link: "/guides",
   },
   {
-    question: "Excepteur sint occaecat cupidatat non proident?",
+    question: "Where can I find help in my area?",
     answer:
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "We provide links to nearby digital literacy programs, public Wi-Fi spots, and government aid. Just enter your postcode or browse by city to find help close to you.",
+    link: "/resources",
   },
 ];
 
@@ -52,7 +53,7 @@ const FAQ = () => {
         <h3 className="!mt-0">Frequently Asked Questions</h3>
         <h4 className="text-muted-foreground">
           Can&apos;t find the answer you&apos;re looking for? Reach out to our
-          customer support team.
+          support team or visit the help center.
         </h4>
         <div className="not-prose mt-4 flex flex-col gap-4 md:mt-8">
           {content.map((item, index) => (
