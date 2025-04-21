@@ -44,6 +44,7 @@ function NavBar() {
         } mx-auto px-4 
           sm:px-6 
           laptop:px-16 laptop:py-4
+          transition-colors duration-500 ease-in-out
         `}>
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
