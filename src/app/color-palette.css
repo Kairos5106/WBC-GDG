@@ -45,4 +45,41 @@
   --color-gray-900: #111827;
 
   --color-rich-black: #02040F;
+
+  /* Resource Colours */
+  /* Unit Plan */
+  --color-unitplan-50: #F6F3F7;
+  --color-unitplan-100: #EDE7EF;
+  --color-unitplan-200: #DBCFDF;
+  --color-unitplan-300: #C9B7CF;
+  --color-unitplan-400: #A686AF;
+  --color-unitplan-500: #83558F; 
+  --color-unitplan-600: #764D81;
+  --color-unitplan-700: #63406B;
+  --color-unitplan-800: #4F3356;
+  --color-unitplan-900: #412A46;
+
+  /* Lesson */
+  --color-lesson-50: #F0F5F9;
+  --color-lesson-100: #E1EBF2;
+  --color-lesson-200: #C3D7E5;
+  --color-lesson-300: #A5C3D8;
+  --color-lesson-400: #689BBF;
+  --color-lesson-500: #2B73A6;
+  --color-lesson-600: #27689A;
+  --color-lesson-700: #1F5680;
+  --color-lesson-800: #194567;
+  --color-lesson-900: #143954;
+
+  /* Activity */
+  --color-activity-50: #FDF5F1;
+  --color-activity-100: #FBEAE2;
+  --color-activity-200: #F7D5C6;
+  --color-activity-300: #F3C0A9;
+  --color-activity-400: #EB9770;
+  --color-activity-500: #E36D37; 
+  --color-activity-600: #CC6232;
+  --color-activity-700: #AA522A;
+  --color-activity-800: #884122;
+  --color-activity-900: #70351C;
 }
