@@ -1,39 +1,72 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
 import { Search, Landmark, Stethoscope, CalendarSearch } from "lucide-react"
 
 export default function FilterSection() {
+  const router = useRouter()
+  const searchParams = useSearchParams()
 
-    const [filters, setFilters] = useState({
-        govServices: false,
-        healthcare: false,
-        events: false,
-      })
-    
-      const clearAll = () => {
-        setFilters({
-          govServices: false,
-          healthcare: false,
-          events: false,
-        })
-      }
-    
-      const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { id, checked } = e.target
-        setFilters(prev => ({
-          ...prev,
-          [id]: checked,
-        }))
-      }
+  const [filters, setFilters] = useState({
+    govServices: false,
+    healthcare: false,
+    events: false,
+  })
+
+  // Sync state from URL on mount
+  useEffect(() => {
+    const categories = searchParams.get("category")?.split(",") || []
+    setFilters({
+      govServices: categories.includes("Government Service"),
+      healthcare: categories.includes("Healthcare"),
+      events: categories.includes("Event"),
+    })
+  }, [searchParams])
+
+  const updateQuery = (updatedFilters: typeof filters) => {
+    const selected: string[] = []
+    if (updatedFilters.govServices) selected.push("Government Service")
+    if (updatedFilters.healthcare) selected.push("Healthcare")
+    if (updatedFilters.events) selected.push("Event")
+
+    const params = new URLSearchParams(searchParams)
+    if (selected.length > 0) {
+      params.set("category", selected.join(","))
+    } else {
+      params.delete("category")
+    }
+    router.push(`?${params.toString()}`)
+  }
+
+  const clearAll = () => {
+    const reset = {
+      govServices: false,
+      healthcare: false,
+      events: false,
+    }
+    setFilters(reset)
+    router.push("/resources") // go back to full list
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, checked } = e.target
+    const updated = {
+      ...filters,
+      [id]: checked,
+    }
+    setFilters(updated)
+    updateQuery(updated)
+  }
 
   return (
-    
-    <div className="w-full md:w-64 bg-white p-5 border border-gray-200">
+    <div className="w-full md:w-64 bg-white p-5 border border-white">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-2xl font-bold text-gray-800">Filters</h2>
-        <button className="text-gray-700 border border-gray-300 px-2.5 py-1.5 text-sm hover:bg-gray-50"
-            onClick={clearAll}>
+        <button
+          onClick={clearAll}
+          className="text-gray-700 border border-gray-300 px-2.5 py-1.5 text-sm hover:bg-gray-50"
+        >
           Clear all
         </button>
       </div>
@@ -57,14 +90,24 @@ export default function FilterSection() {
         </div>
 
         <div className="space-y-4">
+          {/* Government Services */}
           <div className="flex items-start gap-2.5">
-            <input type="checkbox" id="govServices" className="w-4 h-4 mt-2" checked={filters.govServices} onChange={handleChange} />
+            <input
+              type="checkbox"
+              id="govServices"
+              className="w-4 h-4 mt-2"
+              checked={filters.govServices}
+              onChange={handleChange}
+            />
             <div className="flex-1">
               <div className="flex items-center justify-between">
                 <label htmlFor="govServices" className="text-sm text-gray-700">
                   Government Services
                 </label>
-                <div className="p-1.5 rounded mt-2" style={{backgroundColor: "var(--color-service-600)"}}>
+                <div
+                  className="p-1.5 rounded mt-2"
+                  style={{ backgroundColor: "var(--color-service-600)" }}
+                >
                   <Landmark className="h-3 w-3 text-white" />
                 </div>
               </div>
@@ -72,29 +115,49 @@ export default function FilterSection() {
             </div>
           </div>
 
+          {/* Healthcare */}
           <div className="flex items-start gap-2.5">
-            <input type="checkbox" id="healthcare" className="w-4 h-4 mt-2" checked={filters.healthcare} onChange={handleChange} />
+            <input
+              type="checkbox"
+              id="healthcare"
+              className="w-4 h-4 mt-2"
+              checked={filters.healthcare}
+              onChange={handleChange}
+            />
             <div className="flex-1">
               <div className="flex items-center justify-between">
                 <label htmlFor="healthcare" className="text-sm text-gray-700">
                   Healthcare
                 </label>
-                <div className="p-1.5 rounded mt-2" style={{backgroundColor: "var(--color-healthcare-600)"}}>
+                <div
+                  className="p-1.5 rounded mt-2"
+                  style={{ backgroundColor: "var(--color-healthcare-600)" }}
+                >
                   <Stethoscope className="h-3 w-3 text-white" />
                 </div>
               </div>
-              <p className="text-gray-500 text-xs mt-1">Detailed guides on healtcare services.</p>
+              <p className="text-gray-500 text-xs mt-1">Detailed guides on healthcare services.</p>
             </div>
           </div>
 
+          {/* Events */}
           <div className="flex items-start gap-2.5">
-            <input type="checkbox" id="events" className="w-4 h-4 mt-2" checked={filters.events} onChange={handleChange}/>
+            <input
+              type="checkbox"
+              id="events"
+              className="w-4 h-4 mt-2"
+              checked={filters.events}
+              onChange={handleChange}
+            />
             <div className="flex-1">
               <div className="flex items-center justify-between">
                 <label htmlFor="events" className="text-sm text-gray-700">
                   Community Events
                 </label>
-                <div className="p-1.5 rounded mt-2" style={{backgroundColor: "var(--color-event-600)"}}>
+                <div
+                  className="p-1.5 rounded mt-2"
+                  style={{ backgroundColor: "var(--color-event-600)" }}
+                >
                   <CalendarSearch className="h-3 w-3 text-white" />
                 </div>
               </div>
