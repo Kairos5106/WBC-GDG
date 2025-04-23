@@ -8,17 +8,6 @@ import ResourceChapters from "./ResourceChapters";
 import { useState } from "react";
 import { resources } from "@/data/resources";
 
-const dummyData = [
-  {
-    id: "1",
-    title: "Free Community WiFi",
-    description: "Free WiFi access at all city libraries.",
-    category: "Technology",
-    contact: "info@citywifi.org",
-    location: "123 Library Lane",
-  }
-]
-
 // Data for testing purposes
 const chapters = [
   {
