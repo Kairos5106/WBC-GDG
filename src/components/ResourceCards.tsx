@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { Landmark, Stethoscope, CalendarSearch } from "lucide-react"
 import { useSearchParams } from "next/navigation"
 import { resources, ResourceCardProps } from "@/data/resources"
@@ -33,7 +34,12 @@ export default function ResourceCards() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {filteredResources.map((resource, index) => (
-        <ResourceCard key={index} {...resource} />
+        <Link
+          href={`/resource/${resource.slug}`}
+          key={index}
+        >
+          <ResourceCard  {...resource} />
+        </Link>
       ))}
     </div>
   )

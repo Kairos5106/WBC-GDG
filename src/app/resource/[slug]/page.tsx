@@ -6,9 +6,9 @@ import ResourceHeader from "./ResourceHeader";
 import ResourceTOC from "./ResourceTOC";
 import ResourceChapters from "./ResourceChapters";
 import { useState } from "react";
+import { resources } from "@/data/resources";
 
-// Data for testing purposes
-const dummyResources = [
+const dummyData = [
   {
     id: "1",
     title: "Free Community WiFi",
@@ -16,16 +16,8 @@ const dummyResources = [
     category: "Technology",
     contact: "info@citywifi.org",
     location: "123 Library Lane",
-  },
-  {
-    id: "2",
-    title: "Food Bank Support",
-    description: "Weekly grocery support for low-income families.",
-    category: "Food",
-    contact: "support@foodbank.org",
-    location: "456 Main St.",
-  },
-];
+  }
+]
 
 // Data for testing purposes
 const chapters = [
@@ -98,7 +90,7 @@ const chapters = [
 
 type ResourceDetailsProps = {
   params: { 
-    id: string 
+    slug: string 
   };
 };
 
@@ -106,13 +98,14 @@ export default function ResourceDetails({
   params 
 }: ResourceDetailsProps) {
 
-  const resource = dummyResources.find((resource) => resource.id === params.id);
+  const resource = resources.find((resource) => resource.slug === params.slug);
   const [activeSection, setActiveSection] = useState<string>("overview")
+
+  console.log(params.slug)
+  console.log(resources[0].slug === params.slug)
 
   if (!resource) return notFound();
   
-  
-
   function handleSectionClick(section: string) {
     setActiveSection(section)
     // Find the matching chapter and open it
@@ -124,7 +117,9 @@ export default function ResourceDetails({
 
   return (
     <Section>
-      <ResourceHeader />
+      <div className="bg-black">
+        <ResourceHeader />
+      </div>
       <Section>
         <div className="flex flex-col md:flex-row min-h-screen">
           <div className="md:w-1/4 border-r border-gray-200">

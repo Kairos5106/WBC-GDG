@@ -52,7 +52,7 @@ const Header = () => {
                 variant="primary"
                 asChild
               >
-                <Link href="/resource/1">
+                <Link href="/resources">
                   Browse resources
                   <ArrowRightEndOnRectangleIcon 
                     className={`

@@ -13,6 +13,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import ComesInGoesOutUnderline from "@/fancy/components/text/underline-comes-in-goes-out";
 import { resourceTypes } from "@/data/resources";
+import slugify from "./utils/slugify";
 
 const components: {
   className?: string | undefined; 
@@ -22,7 +23,7 @@ const components: {
   ... resourceTypes.map((resourceType, index) => ({
       className: "",
       title: resourceTypes[index],
-      href: `/resources?category=${resourceType.replace(/\s+/g, "+")}`
+      href: `/resources?category=${slugify(resourceType)}`
   }))
   ,
   {
