@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { ChevronDown } from 'lucide-react'
 
 const HeaderSection = () => {
   return (
