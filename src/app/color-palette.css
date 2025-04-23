@@ -45,4 +45,41 @@
   --color-gray-900: #111827;
 
   --color-rich-black: #02040F;
+
+  /* Resource Colours */
+  /* Gov Services */
+  --color-service-50: #F6F3F7;
+  --color-service-100: #EDE7EF;
+  --color-service-200: #DBCFDF;
+  --color-service-300: #C9B7CF;
+  --color-service-400: #A686AF;
+  --color-service-500: #83558F; 
+  --color-service-600: #764D81;
+  --color-service-700: #63406B;
+  --color-service-800: #4F3356;
+  --color-service-900: #412A46;
+
+  /* Healthcare */
+  --color-healthcare-50: #F0F5F9;
+  --color-healthcare-100: #E1EBF2;
+  --color-healthcare-200: #C3D7E5;
+  --color-healthcare-300: #A5C3D8;
+  --color-healthcare-400: #689BBF;
+  --color-healthcare-500: #2B73A6;
+  --color-healthcare-600: #27689A;
+  --color-healthcare-700: #1F5680;
+  --color-healthcare-800: #194567;
+  --color-healthcare-900: #143954;
+
+  /* Events */
+  --color-event-50: #FDF5F1;
+  --color-event-100: #FBEAE2;
+  --color-event-200: #F7D5C6;
+  --color-event-300: #F3C0A9;
+  --color-event-400: #EB9770;
+  --color-event-500: #E36D37; 
+  --color-event-600: #CC6232;
+  --color-event-700: #AA522A;
+  --color-event-800: #884122;
+  --color-event-900: #70351C;
 }
