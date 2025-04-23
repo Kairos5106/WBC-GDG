@@ -77,21 +77,13 @@ const chapters = [
   },
 ];
 
-type ResourceDetailsProps = {
-  params: { 
-    slug: string 
-  };
-};
-
 export default function ResourceDetails({ 
   params 
-}: ResourceDetailsProps) {
+}: { params: { slug: string } }) {
+  const { slug } = params;
 
-  const resource = resources.find((resource) => resource.slug === params.slug);
+  const resource = resources.find((resource) => resource.slug === slug);
   const [activeSection, setActiveSection] = useState<string>("overview")
-
-  console.log(params.slug)
-  console.log(resources[0].slug === params.slug)
 
   if (!resource) return notFound();
   
