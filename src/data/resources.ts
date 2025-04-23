@@ -1,3 +1,5 @@
+import slugify from "@/components/utils/slugify";
+
 export const resourceTypes = [
     "Government Service",
     "Healthcare",
@@ -8,12 +10,19 @@ export type ResourceType = typeof resourceTypes[number];
   
 export type ResourceCardProps = {
     title: string,
+    slug?: string
     type: ResourceType,
     subjects: string[],
     description: string,
 };
 
-export const resources: ResourceCardProps[] = [
+const rawResources: ResourceCardProps[] = [
+    {
+        title: "Test",
+        type: "Healthcare",
+        subjects: ["Elderly Care", "Subsidies"],
+        description: "Subsidized medical plans for senior citizens.",
+    },
     {
         title: "MyCare Seniors Program",
         type: "Healthcare",
@@ -45,3 +54,8 @@ export const resources: ResourceCardProps[] = [
         description: "Join a free fitness session followed by wellness tips for staying active and healthy.",
     },
 ]
+
+export const resources: ResourceCardProps[] = rawResources.map((resource) => ({
+    ...resource,
+    slug: slugify(resource.title),
+}));
