@@ -5,6 +5,7 @@ import NavBarContents from "./NavBarContents";
 import HamburgerIcon from "./icons/HamburgerIcon";
 import CloseIcon from "./icons/CloseIcon";
 import NavBarLogo from "./NavBarLogo";
+import { cn } from "@/lib/utils";
 
 function NavBar() {
   const [isAtTop, setIsAtTop] = useState(true);
@@ -35,9 +36,8 @@ function NavBar() {
     >
       <div 
         className={`
-          mx-4 border-b-2 border-white
-          mobile-lg:mx-4
-          laptop:mx-10 laptop:border-b-4
+          border-b-2 border-white
+          laptop:border-b-4
       `}>
         <div className={`
         ${( isAtTop || isClicked ) ? "bg-brand-primary" : "bg-rich-black/50"
@@ -56,6 +56,10 @@ function NavBar() {
               <div className="ml-4 flex items-center space-x-4">
                 <NavBarContents 
                   className="flex justify-center items-center gap-2" 
+                  buttonStyles={cn(
+                    "text-white font-semibold",
+                    ""
+                  )}
                 />
               </div>
             </div>
@@ -81,6 +85,7 @@ function NavBar() {
         <div className="md:hidden mx-4 pt-2 pb-3 space-y-1 sm:px-3">
           <NavBarContents 
             className="grid grid-cols-[1.0fr_1.0fr] gap-4 w-full p-2" 
+            buttonStyles="bg-white shadow-lg text-black"
           />
         </div>
       )}

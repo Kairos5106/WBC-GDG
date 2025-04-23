@@ -11,6 +11,7 @@ import {
 import Link from "next/link";
 // import CompanyLogo from "./icons/CompanyLogo";
 import { cn } from "@/lib/utils";
+import ComesInGoesOutUnderline from "@/fancy/components/text/underline-comes-in-goes-out";
 
 const components: {
   className?: string | undefined; title: string; href: string; description?: string 
@@ -43,10 +44,12 @@ const components: {
 
 interface NavBarContentsProps {
   className?: string
+  buttonStyles?: string
 }
 
 const NavBarContents: FC<NavBarContentsProps> = ({
   className,
+  buttonStyles
 }) => {
   return (
     <NavigationMenu>
@@ -56,10 +59,12 @@ const NavBarContents: FC<NavBarContentsProps> = ({
 
             <NavigationMenuTrigger 
               className={`
-                shadow-xl
-                tablet:text-lg
+                font-bold
+                tablet:text-lg 
+                laptop:p-8 laptop:text-2xl
+                ${buttonStyles}
             `}>
-              Resources
+              <ComesInGoesOutUnderline label="Resources" />
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className={`
@@ -87,9 +92,12 @@ const NavBarContents: FC<NavBarContentsProps> = ({
               <NavigationMenuLink 
                 className={
                   navigationMenuTriggerStyle() + `
+                  font-semibold
                   tablet:text-lg 
+                  laptop:p-8 laptop:text-2xl
+                  ${buttonStyles}
               `}>
-                Contact Us
+                <ComesInGoesOutUnderline label="Contact Us" />
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
