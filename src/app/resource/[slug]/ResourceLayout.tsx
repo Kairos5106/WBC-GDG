@@ -96,11 +96,10 @@ function ResourceLayout({
 
   return (
     <Section>
-      <ResourceHeader />
-      {resource.title}
+      <ResourceHeader resource={resource} />
       <Section>
-        <div className="flex flex-col md:flex-row min-h-screen">
-          <div className="md:w-1/4 border-r border-gray-200">
+        <div className="flex flex-col md:flex-row min-h-screen gap-6">
+          <div className="">
             <ResourceTOC
               activeSection={activeSection}
               onSectionClick={handleSectionClick}
