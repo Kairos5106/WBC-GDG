@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Section, Container } from '@/components/ds'
 import ResourceHeader from '@/components/ResourceHeader'
 import ResourceList from '@/components/ResourceList'
@@ -15,7 +15,9 @@ function ResourcesPage() {
         </div>
 
         <div className='px-4 pb-8 mt-5'>
-          <ResourceList />
+          <Suspense fallback={<div>Loading stuff...</div>}>
+            <ResourceList />
+          </Suspense>    
         </div>
         
 
