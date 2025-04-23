@@ -84,7 +84,7 @@ export default function Chatbot() {
                   key={idx}
                   className={`whitespace-pre-wrap break-words p-3 rounded-lg text-sm ${
                     msg.role === "user"
-                      ? "bg-blue-100 self-end ml-auto"
+                      ? "bg-brand-primary-100 self-end ml-auto"
                       : "bg-gray-100 self-start mr-auto"
                   }`}
                 >
@@ -107,7 +107,7 @@ export default function Chatbot() {
                 placeholder="Type your message..."
                 className="text-sm"
               />
-              <Button type="submit" disabled={loading || input.trim() === ""}>
+              <Button className="bg-brand-primary hover:bg-brand-primary-900 transition-colors" type="submit" disabled={loading || input.trim() === ""}>
                 <SendHorizonal className="w-4 h-4" />
               </Button>
             </form>
@@ -116,7 +116,7 @@ export default function Chatbot() {
           <motion.button
             key="toggle-button"
             onClick={() => setIsOpen(true)}
-            className="bg-primary text-white p-4 rounded-full shadow-lg flex items-center justify-center"
+            className="bg-brand-primary text-white p-4 rounded-full shadow-lg flex items-center justify-center"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             whileTap={{ scale: 0.95 }}

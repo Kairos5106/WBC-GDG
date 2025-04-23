@@ -18,12 +18,6 @@ export type ResourceCardProps = {
 
 const rawResources: ResourceCardProps[] = [
     {
-        title: "Test",
-        type: "Healthcare",
-        subjects: ["Elderly Care", "Subsidies"],
-        description: "Subsidized medical plans for senior citizens.",
-    },
-    {
         title: "MyCare Seniors Program",
         type: "Healthcare",
         subjects: ["Elderly Care", "Subsidies"],
