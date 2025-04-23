@@ -5,7 +5,7 @@ import ResourceCards from './ResourceCards'
 import { Sheet, SheetTrigger, SheetTitle, SheetContent } from "@/components/ui/sheet"
 import { Button } from './ui/button'
 import { Filter } from "lucide-react"
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
 
 const ResourceList = () => {
 
@@ -23,14 +23,18 @@ const ResourceList = () => {
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="w-[80%] sm:w-[60%] pt-8">
-              <SheetTitle>Filter Options</SheetTitle>
-              <FilterSection />
+              <SheetTitle className='hidden'>Filter Options</SheetTitle>
+              <Suspense fallback={<div>Loading filters...</div>}>
+                <FilterSection />
+              </Suspense>    
             </SheetContent>
           </Sheet>
         </div>
 
         <div className='hidden md:block shrink-0'>
-            <FilterSection />
+            <Suspense fallback={<div>Loading filters...</div>}>
+              <FilterSection />
+            </Suspense>   
         </div>
         <div className='flex-1'>
             <ResourceCards />

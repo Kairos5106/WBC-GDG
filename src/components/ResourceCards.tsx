@@ -3,13 +3,7 @@
 import Image from "next/image"
 import { Landmark, Stethoscope, CalendarSearch } from "lucide-react"
 import { useSearchParams } from "next/navigation"
-
-type ResourceCardProps = {
-  title: string
-  type: "Government Service" | "Healthcare" | "Event"
-  subjects: string[]
-  description: string
-}
+import { resources, ResourceCardProps } from "@/data/resources"
 
 const bgColorMap: Record<string, string> = {
     "Government Service": "var(--color-service-300)",
@@ -27,33 +21,6 @@ export default function ResourceCards() {
 
     const searchParams = useSearchParams()
     const filter = searchParams.get("category")?.split(",") || []
-
-    const resources: ResourceCardProps[] = [
-        {
-        title: "Apply for Senior Citizen ID",
-        type: "Government Service",
-        subjects: ["Healthy Living"],
-        description: "Get discounts and priority access to services by registering for a senior citizen ID.",
-        },
-        {
-        title: "Free Health Checkup for Seniors",
-        type: "Healthcare",
-        subjects: ["Mental Health"],
-        description: "Quarterly free health screening for senior citizens, including blood pressure, cholesterol, and diabetes checks.",
-        },
-        {
-        title: "Low-Cost Mental Health Support",
-        type: "Healthcare",
-        subjects: ["Mental Health"],
-        description: "Get access to affordable therapy and counseling with certified mental health professionals.",
-        },
-        {
-        title: "Senior Fitness & Wellness Workshop",
-        type: "Event",
-        subjects: ["Workshop"],
-        description: "Join a free fitness session followed by wellness tips for staying active and healthy.",
-        },
-    ]
 
     const filteredResources = filter.length > 0
         ? resources.filter(r => filter.includes(r.type))
