@@ -23,7 +23,6 @@ export function PictureCarousel({
     Autoplay({ delay: 2000, stopOnInteraction: true })
   );
 
-  console.log(imageSrc.length, imageSrc);
   return (
     <Carousel
       plugins={[plugin.current]}
