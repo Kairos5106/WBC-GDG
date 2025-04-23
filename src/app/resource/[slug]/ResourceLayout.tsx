@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 import ResourceHeader from './ResourceHeader'
 import ResourceTOC from './ResourceTOC'
 import ResourceChapters from './ResourceChapters'
+import { ResourceCardProps } from '@/data/resources'
 
 // Data for testing purposes
 const chapters = [
@@ -75,7 +76,13 @@ const chapters = [
   },
 ];
 
-function ResourceLayout() {
+interface ResourceDetails {
+  resource: ResourceCardProps
+}
+
+function ResourceLayout({
+  resource
+}: ResourceDetails) {
   const [activeSection, setActiveSection] = useState<string>("overview");
 
   function handleSectionClick(section: string) {
@@ -89,9 +96,8 @@ function ResourceLayout() {
 
   return (
     <Section>
-      <div className="bg-black">
-        <ResourceHeader />
-      </div>
+      <ResourceHeader />
+      {resource.title}
       <Section>
         <div className="flex flex-col md:flex-row min-h-screen">
           <div className="md:w-1/4 border-r border-gray-200">

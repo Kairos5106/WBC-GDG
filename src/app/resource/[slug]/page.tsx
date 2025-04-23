@@ -2,21 +2,20 @@ import { notFound } from "next/navigation";
 import { resources } from "@/data/resources";
 import ResourceLayout from "./ResourceLayout";
 
-type ResourceDetailsProps = {
-  params: { 
-    slug: string 
-  };
-};
+type Params = Promise<{ slug: string }>
 
-export default function ResourceDetails({ 
-  params 
-}: ResourceDetailsProps) {
+export default async function ResourceDetails(
+  props
+: { params: Params }) {
 
-  const resource = resources.find((resource) => resource.slug === params.slug);
+  const params = await props.params;
+  const slug = params.slug;
+
+  const resource = resources.find((resource) => resource.slug === slug);
 
   if (!resource) return notFound();
   
   return (
-    <ResourceLayout />
+    <ResourceLayout resource={resource}/>
   );
 }
