@@ -57,8 +57,7 @@ function NavBar() {
                 <NavBarContents 
                   className="flex justify-center items-center gap-2" 
                   buttonStyles={cn(
-                    "text-white font-semibold",
-                    ""
+                    "text-white font-semibold"
                   )}
                 />
               </div>

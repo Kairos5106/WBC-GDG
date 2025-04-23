@@ -12,34 +12,24 @@ import Link from "next/link";
 // import CompanyLogo from "./icons/CompanyLogo";
 import { cn } from "@/lib/utils";
 import ComesInGoesOutUnderline from "@/fancy/components/text/underline-comes-in-goes-out";
+import { resourceTypes } from "@/data/resources";
 
 const components: {
-  className?: string | undefined; title: string; href: string; description?: string 
+  className?: string | undefined; 
+  title: string; 
+  href: string;
 }[] = [
+  ... resourceTypes.map((resourceType, index) => ({
+      className: "",
+      title: resourceTypes[index],
+      href: `/resources?category=${resourceType.replace(/\s+/g, "+")}`
+  }))
+  ,
   {
-    title: "Category 1",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "Category 2",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "Category 3",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
+    className: "font-bold",
     title: "All Resources",
-    href: "/resources",
-    className: "",
-    description: undefined
-  },
+    href: "/resources"
+  }
 ];
 
 interface NavBarContentsProps {
@@ -78,9 +68,6 @@ const NavBarContents: FC<NavBarContentsProps> = ({
                     href={component.href}
                     className={component.className}
                   >
-                    {component.description && (
-                      <p>{component.description}</p>
-                    )}
                   </ListItem>
                 ))}
               </ul>
@@ -113,28 +100,21 @@ export default NavBarContents;
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+>(({ className, title, ...props }, ref) => {
   return (
     <li>
-      <NavigationMenuLink asChild>
         <a
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
           )}
           {...props}
         >
           <div className={cn(
-            "text-sm font-medium leading-none"
+            "text-sm font-medium leading-none",
+            className
           )}>{title}</div>
-          <p className={cn(
-            "line-clamp-2 text-sm leading-snug text-muted-foreground"
-          )}>
-            {children}
-          </p>
         </a>
-      </NavigationMenuLink>
     </li>
   )
 })
