@@ -24,10 +24,10 @@ function ResourceHeader({
         <div className={`
             px-4 pb-8 bg-gray-100 shadow-md grid grid-cols-1 border-b-2 border-b-rich-black
             mobile-lg:px-8 mobile-lg:pt-12
-            tablet:-mx-2
+            tablet:-mx-2 tablet:-mt-2
             laptop:mt-6 laptop:mx-4  
         `}>
-          <div className="flex flex-col lg:flex-row min-h-screen bg-white">
+          <div className="flex flex-col lg:flex-row h-[100%] bg-white">
             {/* Main Content */}
             <div className="flex-1 p-6 lg:p-10">
               {/* Breadcrumb */}
@@ -126,7 +126,7 @@ function ResourceHeader({
             {/* Right Side Image and Action Bar */}
             <div className="relative lg:w-2/5">
               {/* Background Image */}
-              <div className="h-full w-full bg-[#d88c6a] relative overflow-hidden">
+              <div className="h-full w-full  bg-[#d88c6a] relative overflow-hidden">
                 <Image
                   src="/header-1.jpg"
                   alt="Brain with heart illustration"
@@ -164,7 +164,7 @@ function ResourceHeader({
               </div>
 
               {/* Unit Plan Badge */}
-              <div className="absolute top-0 right-0 bg-[#c97c54] text-white px-4 py-2">
+              <div className="absolute top-0 right-0 bg-[#c97c54] text-white px-4 py-2 hidden laptop:block">
                 Unit Plan
               </div>
             </div>

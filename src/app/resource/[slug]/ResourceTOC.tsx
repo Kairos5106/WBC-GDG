@@ -13,7 +13,10 @@ export default function ResourceTOC({ activeSection, onSectionClick }: ResourceT
   }
 
   return (
-    <div className="bg-white p-6 w-full max-w-sm">
+    <div className={`
+      bg-white p-6 w-full shadow-lg
+      tablet:ml-4
+    `}>
       <nav className="space-y-4">
         <div
           className={`font-medium ${activeSection === "overview" ? "text-black" : "text-gray-800"} cursor-pointer`}
