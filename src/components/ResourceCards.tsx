@@ -20,11 +20,14 @@ const labelColorMap: Record<string, string> = {
 export default function ResourceCards() {
 
     const searchParams = useSearchParams()
-    const filter = searchParams.get("category")?.split(",") || []
+    const categoryFilter = searchParams.get("category")?.split(",") || []
+    const subjectFilter = searchParams.get("subjects")?.split(",") || []
 
-    const filteredResources = filter.length > 0
-        ? resources.filter(r => filter.includes(r.type))
-        : resources
+    const filteredResources = resources.filter((r) => {
+        const matchesCategory = categoryFilter.length === 0 || categoryFilter.includes(r.type)
+        const matchesSubject = subjectFilter.length === 0 || r.subjects?.some((s) => subjectFilter.includes(s))
+        return matchesCategory && matchesSubject
+    })
 
 
   return (
