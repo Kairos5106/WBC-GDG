@@ -16,9 +16,9 @@ function NavBarLogo() {
           laptop:w-[56px]
       `}/>
       <p className={`
-        font-bold pl-2 pb-1 text-md
-        tablet:text-2xl tablet:pl-4 tablet:pb-2
-        laptop:text-3xl laptop:pb-1
+        font-semibold pl-2 text-md
+        tablet:text-2xl
+        laptop:text-3xl laptop:pb-1 laptop:pl-4 
       `}>
         <span className={`text-gray-50`}>Helping</span>
         <span className={`text-brand-primary-300`}>Hand</span>
