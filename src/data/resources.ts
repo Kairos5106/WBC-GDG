@@ -1,9 +1,17 @@
+export const resourceTypes = [
+    "Government Service",
+    "Healthcare",
+    "Event"
+] as const;
+  
+export type ResourceType = typeof resourceTypes[number];
+  
 export type ResourceCardProps = {
-    title: string
-    type: "Government Service" | "Healthcare" | "Event"
-    subjects: string[]
-    description: string
-  }
+    title: string,
+    type: ResourceType,
+    subjects: string[],
+    description: string,
+};
 
 export const resources: ResourceCardProps[] = [
     {
