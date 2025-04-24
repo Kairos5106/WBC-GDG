@@ -3,9 +3,10 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
 import Image from "next/image"
-import { ArrowRight, Download, Video, VideoIcon, FileText, ThumbsUp, Share2 } from "lucide-react"
+import { ArrowRight, Download, Share2 } from "lucide-react"
 import { Badge } from "@/components/ui/badge";
-import { ResourceCardProps } from "@/data/resources";
+import { ResourceCardProps, resourceTypes } from "@/data/resources";
+import ComesInGoesOutUnderline from "@/fancy/components/text/underline-comes-in-goes-out";
 
 interface ResourceHeaderProps {
   resource: ResourceCardProps
@@ -14,6 +15,17 @@ interface ResourceHeaderProps {
 function ResourceHeader({
   resource
 }: ResourceHeaderProps) {
+
+  function getTypeColor(resourceType: string) {
+    if (resourceType === resourceTypes[0]) {
+      return "bg-service-600";
+    } else if (resourceType === resourceTypes[1]) {
+      return "bg-healthcare-600";
+    } else {
+      return "bg-event-600";
+    }
+  }
+  
   return (
     <Section>
       <Container
@@ -31,13 +43,21 @@ function ResourceHeader({
             {/* Main Content */}
             <div className="flex-1 p-6 lg:p-10">
               {/* Breadcrumb */}
-              <nav className="flex items-center gap-2 text-gray-600 mb-8">
-                <Link href="/" className="hover:text-gray-900">
-                  Home
-                </Link>
-                <span className="text-lg">›</span>
-                <Link href="/resources" className="hover:text-gray-900">
-                  Resources
+              <nav className={`flex items-left gap-2 text-gray-600 mb-8 mobile-sm:flex-col
+                tablet:flex-row
+              `}>
+                <div className="flex gap-2 items-center">
+                  <Link href="/" className="hover:text-gray-900">
+                    <ComesInGoesOutUnderline label="Home" />
+                  </Link>
+                  <span className="text-lg">›</span>
+                  <Link href="/resources" className="hover:text-gray-900">
+                    <ComesInGoesOutUnderline label="Resources" />
+                  </Link>
+                  <span className="text-lg">›</span>
+                </div>
+                <Link href="#" className="bg-brand-primary text-white px-3 py-1 whitespace-nowrap">
+                  <ComesInGoesOutUnderline label={resource.title} />
                 </Link>
               </nav>
 
@@ -53,16 +73,27 @@ function ResourceHeader({
 
               {/* Action Buttons */}
               <div className="flex flex-wrap gap-4 mb-12">
-                <Button className="bg-[#c97c54] hover:bg-[#b56b46] text-white flex items-center gap-2 px-6 py-6">
+                <Button className={`hover:bg-[#b56b46] text-white flex items-center gap-2 px-6 py-6
+                    ${getTypeColor(resource.type)}
+                `}>
                   Unit Introduction <ArrowRight className="h-5 w-5" />
                 </Button>
 
                 <Button
                   variant="outline"
-                  className="bg-[#2a2723] hover:bg-[#1a1714] text-white border-0 flex items-center gap-2 px-6 py-6"
+                  className="bg-rich-black hover:bg-transparent text-white border-0 flex items-center gap-2 px-6 py-6"
                 >
                   Download <Download className="h-5 w-5" />
                 </Button>
+
+                <Button
+                    variant="outline"
+                    size="default"
+                    className="text-white border-0 flex items-center gap-2 px-6 py-6 bg-[#2a2723] hover:bg-transparent hover: "
+                  >
+                    <Share2 className="h-5 w-5" />
+                    <span className="">Share</span>
+                  </Button>
               </div>
 
               {/* Key Concepts */}
@@ -94,31 +125,6 @@ function ResourceHeader({
                       }
                     </div>
                   </div>
-
-                  {/* Media Icons */}
-                  <div className="flex gap-3">
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full h-12 w-12 border-gray-300"
-                    >
-                      <Video className="h-6 w-6 text-gray-700" />
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full h-12 w-12 border-gray-300"
-                    >
-                      <VideoIcon className="h-6 w-6 text-gray-700" />
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full h-12 w-12 border-gray-300"
-                    >
-                      <FileText className="h-6 w-6 text-gray-700" />
-                    </Button>
-                  </div>
                 </div>
               </div>
             </div>
@@ -128,43 +134,15 @@ function ResourceHeader({
               {/* Background Image */}
               <div className="h-full w-full  bg-[#d88c6a] relative overflow-hidden">
                 <Image
-                  src="/header-1.jpg"
+                  src="/home-page-header/header-1.jpg"
                   alt="Brain with heart illustration"
                   fill
                   className="object-cover"
                 />
-
-                {/* Action Bar */}
-                <div className="absolute right-0 top-1/3 flex flex-col gap-2">
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="bg-[#1a1714] text-white border-0 h-16 w-16"
-                  >
-                    <Download className="h-6 w-6" />
-                    <span className="text-xs mt-1">Download</span>
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="bg-[#1a1714] text-white border-0 h-16 w-16"
-                  >
-                    <ThumbsUp className="h-6 w-6" />
-                    <span className="text-xs mt-1">Like</span>
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="bg-[#1a1714] text-white border-0 h-16 w-16"
-                  >
-                    <Share2 className="h-6 w-6" />
-                    <span className="text-xs mt-1">Share</span>
-                  </Button>
-                </div>
               </div>
 
               {/* Unit Plan Badge */}
-              <div className="absolute top-0 right-0 bg-[#c97c54] text-white px-4 py-2 hidden laptop:block">
+              <div className={`absolute top-0 right-0 text-white px-4 py-2 hidden laptop:block ${getTypeColor(resource.type)}`}>
                 Unit Plan
               </div>
             </div>

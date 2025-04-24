@@ -24,7 +24,7 @@ export default function ResourceChapters({ chapters }: ResourceChaptersProps) {
   }
 
   return (
-    <div className="w-full bg-gray-100">
+    <div className="w-full bg-gray-100 shadow-lg">
       {chapters.map((chapter) => (
         <div key={chapter.id} className="border-b border-gray-300">
           <div
