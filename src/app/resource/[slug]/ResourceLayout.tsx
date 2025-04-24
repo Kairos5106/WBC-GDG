@@ -75,7 +75,6 @@ const chapters = [
     ),
   },
 ];
-
 interface ResourceDetails {
   resource: ResourceCardProps
 }
