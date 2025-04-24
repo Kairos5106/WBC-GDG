@@ -6,7 +6,6 @@ import ResourceHeader from './ResourceHeader'
 import ResourceTOC from './ResourceTOC'
 import ResourceChapters from './ResourceChapters'
 import { ResourceCardProps } from '@/data/resources'
-
 // Data for testing purposes
 const chapters = [
   {
