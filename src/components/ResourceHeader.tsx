@@ -8,10 +8,10 @@ const HeaderSection = () => {
           Home
         </Link>
         <span className="text-gray-500">&gt;</span>
-        <span className="bg-gray-800 text-white px-3 py-1">Resources</span>
+        <span className="bg-brand-primary text-white px-3 py-1">Resources</span>
       </nav>
 
-      <h1 className="text-5xl font-bold text-gray-800 leading-tight">Resources</h1>
+      <h1 className="text-5xl font-bold text-brand-primary leading-tight">Resources</h1>
 
     </div>
   )

@@ -80,7 +80,7 @@ const AnimatedGradientComponent: React.FC = () => {
               title="Seniors Without Internet Access"
               value="27%"
               subtitle="Roughly 1 in 4 seniors in the U.S. lack internet access at home (Pew Research)"
-              colors={["#6366F1", "#A78BFA", "#D8B4FE"]}
+              colors={["#F5FFF5", "#EBFEEA", "#D7FED5"]}
               delay={0.2}
             />
           </div>
@@ -88,14 +88,14 @@ const AnimatedGradientComponent: React.FC = () => {
             title="Low-Income Digital Divide"
             value="38%"
             subtitle="Over one-third of low-income households lack a reliable computer or broadband"
-            colors={["#60A5FA", "#34D399", "#93C5FD"]}
+            colors={["#9CFC97", "#7DCA79", "#5E975B"]}
             delay={0.4}
           />
           <BentoCard
             title="Digital Literacy Support"
             value="+1,200"
             subtitle="People empowered through HelpingHand community guides and in-person sessions"
-            colors={["#F59E0B", "#FBBF24", "#FCD34D"]}
+            colors={["#B0FDAC", "#89B586", "#6BA368"]}
             delay={0.6}
           />
           <div className="md:col-span-2">
@@ -103,7 +103,7 @@ const AnimatedGradientComponent: React.FC = () => {
               title="Local Resource Listings"
               value="320+"
               subtitle="Curated services including healthcare, transportation, and digital help centers"
-              colors={["#3B82F6", "#A78BFA", "#FBCFE8"]}
+              colors={["#6BA368", "#568253", "#40623E"]}
               delay={0.8}
             />
           </div>
@@ -112,7 +112,7 @@ const AnimatedGradientComponent: React.FC = () => {
               title="Community Satisfaction"
               value="4.9/5"
               subtitle="Feedback from real users who gained confidence and access through HelpingHand"
-              colors={["#EC4899", "#F472B6", "#3B82F6"]}
+              colors={["#3E653C", "#1F321E", "#7DCA79"]}
               delay={1}
             />
           </div>
