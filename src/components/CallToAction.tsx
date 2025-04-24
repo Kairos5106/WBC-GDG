@@ -43,7 +43,7 @@ export function CallToAction() {
   return (
     <Section>
       <Container className="space-y-8">
-        <h2 className="!my-0">Want to talk to us?</h2>
+        <h2 className="!my-0 text-xl font-bold">Want to talk to us?</h2>
         <p className="text-sm opacity-70 pt-4 md:text-xl">
           <Balancer>
             Send us your email and we&apos;ll get back to you!
@@ -64,7 +64,7 @@ export function CallToAction() {
                       {...field}
                     />
                   </FormControl>
-                  <FormDescription>Lorem ipsum dolor sit amet.</FormDescription>
+                  <FormDescription className="hidden">Lorem ipsum dolor sit amet.</FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
