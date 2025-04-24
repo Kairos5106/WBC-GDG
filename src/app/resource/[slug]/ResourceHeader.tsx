@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
 import Image from "next/image"
-import { ArrowRight, Download, Video, VideoIcon, FileText, ThumbsUp, Share2 } from "lucide-react"
+import { ArrowRight, Download, Share2 } from "lucide-react"
 import { Badge } from "@/components/ui/badge";
 import { ResourceCardProps } from "@/data/resources";
 
@@ -59,10 +59,19 @@ function ResourceHeader({
 
                 <Button
                   variant="outline"
-                  className="bg-[#2a2723] hover:bg-[#1a1714] text-white border-0 flex items-center gap-2 px-6 py-6"
+                  className="bg-rich-black hover:bg-transparent text-white border-0 flex items-center gap-2 px-6 py-6"
                 >
                   Download <Download className="h-5 w-5" />
                 </Button>
+
+                <Button
+                    variant="outline"
+                    size="default"
+                    className="text-white border-0 flex items-center gap-2 px-6 py-6 bg-[#2a2723] hover:bg-transparent hover: "
+                  >
+                    <Share2 className="h-5 w-5" />
+                    <span className="mt-1">Share</span>
+                  </Button>
               </div>
 
               {/* Key Concepts */}
@@ -94,31 +103,6 @@ function ResourceHeader({
                       }
                     </div>
                   </div>
-
-                  {/* Media Icons */}
-                  <div className="flex gap-3">
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full h-12 w-12 border-gray-300"
-                    >
-                      <Video className="h-6 w-6 text-gray-700" />
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full h-12 w-12 border-gray-300"
-                    >
-                      <VideoIcon className="h-6 w-6 text-gray-700" />
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full h-12 w-12 border-gray-300"
-                    >
-                      <FileText className="h-6 w-6 text-gray-700" />
-                    </Button>
-                  </div>
                 </div>
               </div>
             </div>
@@ -128,39 +112,11 @@ function ResourceHeader({
               {/* Background Image */}
               <div className="h-full w-full  bg-[#d88c6a] relative overflow-hidden">
                 <Image
-                  src="/header-1.jpg"
+                  src="/home-page-header/header-1.jpg"
                   alt="Brain with heart illustration"
                   fill
                   className="object-cover"
                 />
-
-                {/* Action Bar */}
-                <div className="absolute right-0 top-1/3 flex flex-col gap-2">
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="bg-[#1a1714] text-white border-0 h-16 w-16"
-                  >
-                    <Download className="h-6 w-6" />
-                    <span className="text-xs mt-1">Download</span>
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="bg-[#1a1714] text-white border-0 h-16 w-16"
-                  >
-                    <ThumbsUp className="h-6 w-6" />
-                    <span className="text-xs mt-1">Like</span>
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="bg-[#1a1714] text-white border-0 h-16 w-16"
-                  >
-                    <Share2 className="h-6 w-6" />
-                    <span className="text-xs mt-1">Share</span>
-                  </Button>
-                </div>
               </div>
 
               {/* Unit Plan Badge */}

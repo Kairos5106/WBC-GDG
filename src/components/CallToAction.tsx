@@ -69,7 +69,7 @@ export function CallToAction() {
                 </FormItem>
               )}
             />
-            <Button type="submit">Submit</Button>
+            <Button variant="secondary">Submit</Button>
           </form>
         </Form>
       </Container>
