@@ -9,7 +9,9 @@ const HeaderSection = () => {
           <ComesInGoesOutUnderline label="Home" />
         </Link>
         <span className="text-gray-500">&gt;</span>
-        <span className="bg-brand-primary text-white px-3 py-1">Resources</span>
+        <span className="bg-brand-primary text-white px-3 py-1">
+          <ComesInGoesOutUnderline label="Resources" />
+        </span>
       </nav>
 
       <h1 className="text-5xl font-bold text-rich-black leading-tight">Resources</h1>

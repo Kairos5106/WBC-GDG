@@ -1,10 +1,12 @@
 import React from "react";
 import ClickableCard from "./ClickableCard";
-import { BookOpenIcon } from "@heroicons/react/24/solid";
 import RotatingTexts from "./RotatingTexts";
 import { cn } from "@/lib/utils";
 import { resourceTypes } from "@/data/resources";
 import slugify from "./utils/slugify";
+import Link from "next/link";
+import ComesInGoesOutUnderline from "@/fancy/components/text/underline-comes-in-goes-out";
+import { CalendarSearch, Landmark, Stethoscope } from "lucide-react";
 interface IntroProps {
   rotatingTextsArr: string[]
 }
@@ -18,6 +20,11 @@ export default function Introduction({
         block pt-16
       `}
     >
+      <nav className="flex items-center gap-2 text-gray-600 mb-8">
+        <Link href="/" className="bg-brand-primary text-white px-3 py-1">
+          <ComesInGoesOutUnderline label="Home" />
+        </Link>
+      </nav>
       <div
         className={cn(
           "flex flex-col pb-4 gap-4 items-start",
@@ -50,22 +57,45 @@ export default function Introduction({
       </h2>
 
       <div className="grid grid-cols-1 gap-3">
-        {resourceTypes.map((resourceType, index) => (
-          <ClickableCard
-            key={index}
-            href={`/resources?category=${slugify(resourceType)}`}
-            title={resourceType}
-            description=""
-            icon={
-              <BookOpenIcon
-                width={20}
-                className={`
-                    tablet:w-[24px]
-                  `}
-              />
-            }
-          />
-        ))}
+        <ClickableCard
+          href={`/resources?category=${slugify(resourceTypes[0])}`}
+          title={resourceTypes[0]}
+          description=""
+          icon={
+            <div
+              className="p-1.5 rounded"
+              style={{ backgroundColor: "var(--color-service-600)" }}
+            >
+              <Landmark className="h-3 w-3 text-white" />
+            </div>
+          }
+        />
+        <ClickableCard
+          href={`/resources?category=${slugify(resourceTypes[1])}`}
+          title={resourceTypes[1]}
+          description=""
+          icon={
+            <div
+              className="p-1.5 rounded"
+              style={{ backgroundColor: "var(--color-healthcare-600)" }}
+            >
+              <Stethoscope className="h-3 w-3 text-white" />
+            </div>
+          }
+        />
+        <ClickableCard
+          href={`/resources?category=${slugify(resourceTypes[2])}`}
+          title={resourceTypes[2]}
+          description=""
+          icon={
+            <div
+              className="p-1.5 rounded"
+              style={{ backgroundColor: "var(--color-event-600)" }}
+            >
+              <CalendarSearch className="h-3 w-3 text-white" />
+            </div>
+          }
+        />
       </div>
     </div>
   );

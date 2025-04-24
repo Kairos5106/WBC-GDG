@@ -31,7 +31,7 @@ function ClickableCard({
             { icon }
 
             <CardTitle className={`
-              font-bold text-lg text-brand-primary-700
+              font-bold text-lg text-rich-black
               tablet:text-2xl
             `}>{title}</CardTitle>
 
