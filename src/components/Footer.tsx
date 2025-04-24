@@ -29,11 +29,12 @@ export default function Footer() {
             </Link>
             <p className="text-md leading-relaxed">
               <Balancer>
-                <span className="font-bold">HelpingHand</span> empowers seniors and low-income families by making vital information, digital literacy resources, and community support easy to access.
+                <span className="font-bold"><span className={`text-rich-black`}>Helping</span><span className={`text-brand-primary`}>Hand</span></span> empowers seniors and low-income families
+                by making vital information, digital literacy resources, and community support easy to access.
               </Balancer>
             </p>
-            <p className="text-xs text-muted-foreground">
-              © HelpingHand. All rights reserved. 2025–present.
+            <p className="text-muted-foreground">
+              © Kofi. All rights reserved. 2025-present.
             </p>
           </div>
 

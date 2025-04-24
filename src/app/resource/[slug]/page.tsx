@@ -9,8 +9,7 @@ export default async function ResourceDetails(
 : { params: Params }) {
 
   const params = await props.params;
-  const slug = params.slug;
-
+  const slug = decodeURIComponent(params.slug);
   const resource = resources.find((resource) => resource.slug === slug);
 
   if (!resource) return notFound();

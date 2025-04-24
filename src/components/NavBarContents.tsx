@@ -59,7 +59,7 @@ const NavBarContents: FC<NavBarContentsProps> = ({
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className={`
-                grid grid-cols-1 max-w-[80vw] max-h-[65vh] overflow-scroll p-2
+                grid grid-cols-1 max-w-[80vw] max-h-[65vh] p-2
                 md:w-50
               `}>
                 {components.map((component) => (

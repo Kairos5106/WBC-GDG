@@ -44,10 +44,10 @@ export default function ResourceCards() {
 
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {filteredResources.map((resource, index) => (
+            {filteredResources.map((resource) => (
                 <Link
                     href={`/resource/${resource.slug}`}
-                    key={index}
+                    key={resource.slug}
                     title={`Learn more about ${resource.title}`}
                     className="h-[235px]"  // Set a fixed height for all cards
                 >
